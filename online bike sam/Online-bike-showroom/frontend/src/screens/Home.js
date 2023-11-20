@@ -105,17 +105,17 @@ const Home = () => {
       </div>
       <div className="container">
         {
-          bike_type !== []
-          ? bike_type.map((data)=>{
+          !bike_type
+          ? bike_type?.map((data)=>{
             return( <div className='row mb-3'>
               <div key={data._id} className="fs-3 m-3">
                 {data.typeName}
                 </div>
                 <hr />
 
-                {bikes !==[]
+                {!bikes
                 ?
-                bikes.filter((bike)=>(bike.typeName===data.typeName) && (bike.name.toLowerCase().includes(search.toLowerCase()))) 
+                bikes?.filter((bike)=>(bike.typeName===data.typeName) && (bike.name.toLowerCase().includes(search.toLowerCase()))) 
                 .map(filterItems=>{
                   return(
                    <div key={filterItems._id} className="col-12 col-md-6 col-lg-3">
