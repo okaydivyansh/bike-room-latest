@@ -10,32 +10,30 @@ const Card = (props) => {
   const [color, setColor]=useState(1)
   const [qty, setQty]=useState("")
 
-  const handleAddToCart = async ()=>{
-    let bikes = []
-    for (const item of data) {
-      if (item.id === props.bikesItem._id) {
-        bikes = item;
-
-        break;
-      }
-    } 
-    if (bikes!==[]) {
-      if (bikes.color === color) {
-        await dispatch({ type: "UPDATE", id: bikeItem._id, price: props.amount, qty: qty }) /*Error here*/
-        return
-      }
-     
-    else if (bikes.color !== color) {
-      await dispatch({ type: "ADD", id: bikeItem._id, name: bikeItem.name, price: finalPrice, qty: qty, colors: color,img: props.ImgSrc })
-      console.log("Size different so simply ADD one more to the list")
-      return
+ const handleAddToCart = async () => {
+  let bikess = []
+  for (const item of data) {
+    if (item.id === props.bikeItem._id) {
+      bikess = item;
+      break;
     }
-    return
   }
-    await dispatch({type:"ADD", id:props.bikeItem._id, name:props.bikeItem.name, price:props.bikeItem.price, color:color, qty:qty})
-    console.log(data)
 
+  if (bikess !== []) {
+    if (bikess.color === color) {
+      await dispatch({ type: "UPDATE", id: props.bikeItem._id, price: props.amount, qty: qty });
+      return;
+    } else if (bikess.color !== color) {
+      await dispatch({ type: "ADD", id: props.bikeItem._id, name: props.bikeItem.name, price: finalPrice, qty: qty, colors: color, img: props.ImgSrc });
+      console.log("Size different so simply ADD one more to the list");
+      return;
+    }
+    return;
   }
+
+  await dispatch({ type: "ADD", id: props.bikeItem._id, name: props.bikeItem.name, price: props.bikeItem.price, color: color, qty: qty });
+  console.log(data);
+};
   
   let finalPrice= qty*parseInt(props.amount);
   return (
