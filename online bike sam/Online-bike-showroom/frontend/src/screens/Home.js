@@ -28,7 +28,6 @@ const Home = () => {
 
   return (
     <div>
-      
       <div>
       <div
         id="carouselExampleFade"

@@ -4,6 +4,7 @@ const Card = (props) => {
 
   let dispatch= useDispatchCart();
   let data=useCart();
+  console.log(data);
   let colors=props.colors;
   let colorOptions=Object.keys(colors);
   //let bikeItem=props.bikes;
@@ -20,6 +21,7 @@ const Card = (props) => {
   }
 
   if (bikess !== []) {
+    let finalPrice= qty*parseInt(props.amount);
     if (bikess.color === color) {
       await dispatch({ type: "UPDATE", id: props.bikeItem._id, price: props.amount, qty: qty });
       return;
@@ -33,9 +35,10 @@ const Card = (props) => {
 
   await dispatch({ type: "ADD", id: props.bikeItem._id, name: props.bikeItem.name, price: props.bikeItem.price, color: color, qty: qty });
   console.log(data);
+
 };
   
-  let finalPrice= qty*parseInt(props.amount);
+  
   return (
     <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
       <img

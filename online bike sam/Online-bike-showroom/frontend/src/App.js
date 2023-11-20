@@ -16,7 +16,7 @@ function App() {
     <CartProvider>
     <Router>
       <div>
-        <NavigationBar/>
+       <NavigationBar/>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
