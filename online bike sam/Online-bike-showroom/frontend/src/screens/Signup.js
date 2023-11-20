@@ -39,7 +39,7 @@ export default function Signup() {
   return (
     <div
       style={{
-        background: 'linear-gradient(to right, #b8e994, #2ecc71, #ffffff)',
+        background: 'linear-gradient(to right, #5a8d68, #2e604e)',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -48,7 +48,7 @@ export default function Signup() {
         overflow: 'hidden'
       }}
     >
-      <div style={{ background: 'white', padding: '20px', borderRadius: '10px', width: '400px' }}>
+      <div style={{ background: 'white', padding: '20px', borderRadius: '10px', width: '400px', border: '4px solid #34563e' }}>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
