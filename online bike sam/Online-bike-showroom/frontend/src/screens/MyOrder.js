@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { API_URL } from '../constant';
 
 export default function MyOrder() {
 
@@ -8,9 +9,9 @@ export default function MyOrder() {
 
     const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch("http://localhost:3000/api/myOrderData", {
+        await fetch(`${API_URL}/api/myOrderData`, {
             // credentials: 'include',
-            // Origin:"http://localhost:3000/login",
+        
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

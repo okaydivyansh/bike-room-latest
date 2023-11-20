@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { API_URL } from '../constant';
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   let navigate = useNavigate();
@@ -8,7 +8,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(JSON.stringify({ email: credentials.email, password: credentials.password }));
-    const response = await fetch("http://localhost:3000/api/loginuser", {
+    const response = await fetch(`${API_URL}/api/loginuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

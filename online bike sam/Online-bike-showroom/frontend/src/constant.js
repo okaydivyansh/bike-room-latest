@@ -1,0 +1,1 @@
+export const API_URL="https://bike-room-latest.vercel.app";

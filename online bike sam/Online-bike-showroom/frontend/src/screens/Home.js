@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from "react";
+import { API_URL } from "../constant";
 // import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
@@ -9,7 +10,7 @@ const Home = () => {
   const[bikes, set_bikes]=useState([]);
 
   const loadData= async()=>{
-    let response = await fetch("http://localhost:3000/api/bikeData",{
+    let response = await fetch(`${API_URL}/api/bikeData`,{
       method:"POST",
       headers: {
         'Content-Type':'application/json'

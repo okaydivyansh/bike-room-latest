@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_URL } from '../constant';
 
 export default function Signup() {
   const [credentials, setCredentials] = useState({ name: '', email: '', password: '', geolocation: '' });
@@ -10,7 +11,7 @@ export default function Signup() {
     console.log(JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password, location: credentials.geolocation }));
 
     try {
-      const response = await fetch("http://localhost:3000/api/CreateUser", {
+      const response = await fetch(`${API_URL}/api/CreateUser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
