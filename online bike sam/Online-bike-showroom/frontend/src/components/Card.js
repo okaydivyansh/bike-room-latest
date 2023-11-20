@@ -6,7 +6,7 @@ const Card = (props) => {
   let data=useCart();
   let colors=props.colors;
   let colorOptions=Object.keys(colors);
-  let bikeItem=props.bikes;
+  //let bikeItem=props.bikes;
   const [color, setColor]=useState(1)
   const [qty, setQty]=useState("")
 
