@@ -19,7 +19,7 @@ export default function Cart() {
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:3000/api/auth/orderData", {
+    let response = await fetch("http://localhost:3000/api/orderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
@@ -50,19 +50,19 @@ export default function Cart() {
               <th scope='col' >#</th>
               <th scope='col' >Name</th>
               <th scope='col' >Quantity</th>
-              <th scope='col' >Option</th>
+              <th scope='col' >Color</th>
               <th scope='col' >Amount</th>
               <th scope='col' ></th>
             </tr>
           </thead>
           <tbody>
-            {data.map((bikes, index) => (
+            {data.map((bike, index) => (
               <tr>
                 <th scope='row' >{index + 1}</th>
-                <td >{bikes.name}</td>
-                <td>{bikes.qty}</td>
-                <td>{bikes.size}</td>
-                <td>{bikes.price}</td>
+                <td >{bike.name}</td>
+                <td>{bike.qty}</td>
+                <td>{bike.color}</td>
+                <td>{bike.price}</td>
                 <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
             ))}
           </tbody>
