@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from "react";
-import { API_URL } from "../constant";
-// import NavigationBar from "../components/Navbar";
+import NavigationBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import { API_URL } from "../constant";
 const Home = () => {
 
   const[search, setSearch]=useState('');
@@ -29,6 +29,9 @@ const Home = () => {
 
   return (
     <div>
+      <div>
+        <NavigationBar />
+      </div>
       <div>
       <div
         id="carouselExampleFade"
